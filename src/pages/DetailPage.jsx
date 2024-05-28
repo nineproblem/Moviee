@@ -9,7 +9,7 @@ const DetailPage = () => {
   const {id} = useParams();
     useEffect(()=>{
         getDetailMovie();
-    },[id]);
+    },[getDetailMovie]);
     const getDetailMovie = async ()=>{
      const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=7e9e43b3b9ea740d32cc72dc887033fd`);
      const data = await response.json();

@@ -7,7 +7,7 @@ function SearchPage() {
     const [searchMovies,setSearchMovies] = useState([]);
     useEffect(()=>{
         getSearchMovie ();
-    },[title]);
+    },[getSearchMovie]);
     const getSearchMovie = async () =>{
         const response = await fetch (`https://api.themoviedb.org/3/search/movie?api_key=7e9e43b3b9ea740d32cc72dc887033fd&query=${title}`);
         const data = await response.json();

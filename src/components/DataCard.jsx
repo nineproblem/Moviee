@@ -5,7 +5,7 @@ const DataCard = ({title,url}) => {
   const [dataMovies,setDataMovies] = useState([]);
   useEffect(()=>{
     getDataMovies();
-  },[]);
+  },[getDataMovies]);
   const getDataMovies = async ()=> {
    const response = await fetch(url);
    const data = await response.json();
