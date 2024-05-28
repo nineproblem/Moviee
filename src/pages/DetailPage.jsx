@@ -7,15 +7,15 @@ import { Link } from 'react-router-dom';
 const DetailPage = () => {
   const [movie,SetMovie] = useState({});
   const {id} = useParams();
+  const getDetailMovie = async ()=>{
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=7e9e43b3b9ea740d32cc72dc887033fd`);
+    const data = await response.json();
+    console.log(data);
+    SetMovie(data);
+   };
     useEffect(()=>{
         getDetailMovie();
-    },[getDetailMovie]);
-    const getDetailMovie = async ()=>{
-     const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=7e9e43b3b9ea740d32cc72dc887033fd`);
-     const data = await response.json();
-     console.log(data);
-     SetMovie(data);
-    };
+    },[id]);
   return (
     <>
       {

@@ -3,14 +3,15 @@ import CardContainer from './CardContainer';
 
 const DataCard = ({title,url}) => {
   const [dataMovies,setDataMovies] = useState([]);
+  const getDataMovies = async ()=> {
+    const response = await fetch(url);
+    const data = await response.json();
+    setDataMovies (data.results); 
+   };
   useEffect(()=>{
     getDataMovies();
-  },[getDataMovies]);
-  const getDataMovies = async ()=> {
-   const response = await fetch(url);
-   const data = await response.json();
-   setDataMovies (data.results); 
-  };
+  },[]);
+ 
   return (
     <section className='px-8 my-10'>
       <h1 className='text-4xl font-mono font-bold text-white'>{title}</h1>
