@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import CardContainer from './CardContainer';
+import { useEffect, useState } from 'react';
 
 const DataCard = ({title,url}) => {
   const [dataMovies,setDataMovies] = useState([]);
