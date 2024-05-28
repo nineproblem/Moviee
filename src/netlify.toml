@@ -1,6 +1,8 @@
 [build]
-  command = "npm run build"
-  publish = "build"
+   command: npm run build
+    commandOrigin: ui
+     publish: /opt/build/repo/build
+     publishOrigin: ui
 
 [context.production.environment]
   NODE_ENV = "production"
