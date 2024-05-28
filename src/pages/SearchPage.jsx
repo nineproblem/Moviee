@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import CardContainer from "../components/CardContainer";
 
-function SearchPage() {
+function SearchPage({}) {
     const {title} = useParams();
     const [searchMovies,setSearchMovies] = useState([]);
     const getSearchMovie = async () =>{
@@ -12,7 +12,7 @@ function SearchPage() {
     };
     useEffect(()=>{
         getSearchMovie ();
-    },[title]);
+    },[title,getSearchMovie]);
    
   return (
     <section>

@@ -10,7 +10,7 @@ const DataCard = ({title,url}) => {
    };
   useEffect(()=>{
     getDataMovies();
-  },[]);
+  },[getDataMovies]);
  
   return (
     <section className='px-8 my-10'>

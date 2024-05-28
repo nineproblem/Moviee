@@ -15,7 +15,7 @@ const DetailPage = () => {
    };
     useEffect(()=>{
         getDetailMovie();
-    },[id]);
+    },[id,getDetailMovie]);
   return (
     <>
       {
