@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import CardContainer from './CardContainer';
-import { useEffect, useState } from 'react';
 
 const DataCard = ({title,url}) => {
   const [dataMovies,setDataMovies] = useState([]);
@@ -10,8 +9,7 @@ const DataCard = ({title,url}) => {
   const getDataMovies = async ()=> {
    const response = await fetch(url);
    const data = await response.json();
-   setDataMovies (data.results);
-   
+   setDataMovies (data.results); 
   };
   return (
     <section className='px-8 my-10'>
