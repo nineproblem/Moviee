@@ -1,0 +1,26 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[context.production.environment]
+  NODE_ENV = "production"
+
+[context.deploy-preview]
+  command = "npm run build"
+  publish = "build"
+
+[context.branch-deploy]
+  command = "npm run build"
+  publish = "build"
+
+# Optional: specify functions directory if you have Netlify functions
+#[functions]
+#  directory = "netlify/functions"
+
+# Optional: custom environment variables for deploy previews
+#[context.deploy-preview.environment]
+#  REACT_APP_API_URL = "https://api.preview.example.com"
+
+# Optional: custom environment variables for branch deploys
+#[context.branch-deploy.environment]
+#  REACT_APP_API_URL = "https://api.branch.example.com"
